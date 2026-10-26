@@ -18,5 +18,30 @@ def coin_change_recursive(coins, amount):
     return -1 if fewest is None else fewest
 
 
+def coin_change_memoized(coins, amount, memo):
+    if amount == 0:
+        return 0
+    if amount < 0:
+        return -1
+    if amount in memo:
+        return memo[amount]
+
+    fewest = None
+    for coin in coins:
+        if coin <= 0 or coin > amount:
+            continue
+
+        remaining_coins = coin_change_memoized(coins, amount - coin, memo)
+        if remaining_coins != -1:
+            candidate = remaining_coins + 1
+            if fewest is None or candidate < fewest:
+                fewest = candidate
+
+    memo[amount] = -1 if fewest is None else fewest
+    return memo[amount]
+
+
 if __name__ == "__main__":
-    print(coin_change_recursive([1, 2, 5], 11))
+    coins = [1, 2, 5]
+    print(coin_change_recursive(coins, 11))
+    print(coin_change_memoized(coins, 11, {}))
