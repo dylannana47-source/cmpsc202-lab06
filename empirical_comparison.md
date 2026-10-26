@@ -1,6 +1,6 @@
 # Empirical Comparison
 
-I tested `coins = [1, 2, 5]` with amounts 5, 10, 15, 20, and 25 on Windows using Python 3.13.14. The table reports the median of three runs measured with `perf_counter()`; each memoized run starts with a fresh dictionary. The benchmark script also checks that all three approaches return the same result.
+I tested `coins = [1, 2, 5]` with amounts 5, 10, 15, 20, and 25 The table reports the median of three runs measured with `perf_counter()`; each memoized run starts with a fresh dictionary. The benchmark script also checks that all three approaches return the same result.
 
 | Amount | Naive recursion | Memoization | Bottom-up DP |
 |---:|---:|---:|---:|
