@@ -42,6 +42,7 @@ def coin_change_memoized(coins, amount, memo):
 
 
 def coin_change_dp(coins, amount):
+    """Return the fewest coins needed, or -1 if the amount cannot be made."""
     if amount < 0:
         return -1
 
