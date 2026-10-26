@@ -57,7 +57,7 @@ def coin_change_dp(coins, amount):
                     dp[current_amount - coin] + 1,
                 )
 
-    return dp[amount]
+    return -1 if dp[amount] == unreachable else dp[amount]
 
 
 if __name__ == "__main__":
