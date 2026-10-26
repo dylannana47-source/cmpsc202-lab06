@@ -65,3 +65,4 @@ if __name__ == "__main__":
     coins = [1, 2, 5]
     print(coin_change_recursive(coins, 11))
     print(coin_change_memoized(coins, 11, {}))
+    print(coin_change_dp(coins, 11))
